@@ -6,7 +6,12 @@ import lk.ijse.pos.thogakadeapispring.repo.CustomerRepo;
 import lk.ijse.pos.thogakadeapispring.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
 public class CustomerServiceIMPL implements CustomerService {
 
     @Autowired

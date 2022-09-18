@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "Custoemr")
 public class Customer {
     @Id
     String id;

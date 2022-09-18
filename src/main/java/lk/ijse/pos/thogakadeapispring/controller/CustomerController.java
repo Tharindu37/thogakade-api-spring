@@ -1,17 +1,21 @@
 package lk.ijse.pos.thogakadeapispring.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.pos.thogakadeapispring.dto.CustomerDTO;
+import lk.ijse.pos.thogakadeapispring.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/customer")
 @CrossOrigin
 public class CustomerController {
 
+    @Autowired
+    CustomerService customerService;
+
     @PostMapping("/save")
-    public String saveCustomer(){
+    public String saveCustomer(@RequestBody CustomerDTO dto){
+        customerService.saveCustomer(dto);
         return "saved";
     }
 
