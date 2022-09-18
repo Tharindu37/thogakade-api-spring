@@ -1,5 +1,7 @@
 package lk.ijse.pos.thogakadeapispring.config;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -18,7 +20,8 @@ public class ProjectConfig {
 //    public PasswordEncoder passwordEncoder() {
 //        return NoOpPasswordEncoder.getInstance();
 //    }
+    @Bean
     public ModelMapper modelMapper() {
-
+        return new ModelMapper();
     }
 }
